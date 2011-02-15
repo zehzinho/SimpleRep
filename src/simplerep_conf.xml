@@ -1,0 +1,35 @@
+<simplerepconf>
+
+    <!-- AR conf -->
+    <port>9090</port>
+    <transportProtocol>http</transportProtocol>
+    <timeout>1000</timeout>
+
+	<!-- Where are the other samoa instances? -->
+	<replicas style="active">
+      <replica>127.0.0.1:6660</replica>
+      <replica>127.0.0.1:6661</replica>
+      <replica>127.0.0.1:6662</replica>     
+      <replica>127.0.0.1:6663</replica>             
+    </replicas>
+    
+    <proxies>
+	    <proxy>http://127.0.0.1:9090</proxy>
+	    <proxy>http://127.0.0.1:9091</proxy>
+	    <proxy>http://127.0.0.1:9092</proxy>              
+	    <proxy>http://127.0.0.1:9093</proxy>       
+    </proxies>
+	
+	<!-- Samoa configuration for this instance -->
+    <samoa>
+        <host>127.0.0.1</host>
+        <port>6660</port>   
+    </samoa>
+	
+	<!-- I'm a proxy of which app server? -->
+	<appserver>
+		<host>localhost</host>
+		<port>8080</port>
+	</appserver>
+	
+</simplerepconf>
